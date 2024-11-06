@@ -1,0 +1,4 @@
+
+      /*   $events = DB::collection('events')->update(['organizer_type' => 'App\Account']);
+        var_dump($events);
+        return true; */

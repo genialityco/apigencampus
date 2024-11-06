@@ -1,0 +1,85 @@
+# the name of this particular app, remember that we allow you
+# to create a project out of 1 or more apps, so this gives our
+# Laravel app a name...
+name: app
+type: php:7.2 # SSIA
+build:
+  # Same as before, this alerts our system to look for a composer.json
+  # or composer.lock file and install the dependencies defined therein
+  flavor: composer
+
+relationships:
+    database: "mydatabase:mongodb"  
+    applicationqueue: "redisdata:redis"
+
+# basic web configuration for this particular app.  Laravel apps have a
+# "public" folder that serves as the web docroot. 
+web:
+  locations:
+    "/":
+      root: "public"
+      index:
+        - index.php
+      allow: true
+      passthru: "/index.php"
+      headers:
+        Access-Control-Allow-Origin: http://localhost, https://localhost, https://evius.co, https://eviusco.netlify.com, https://eviusauth.netlify.com
+# How much disk space to allot to this app.  
+disk: 2048
+# size: M
+# This is where you define your writable file system paths.  the keys are the
+# paths in your app that need to be writable/uploadable.  The values are always
+# going to be named "shared:files/$WHATEVER_HERE", where "WHATEVER_HERE" can be
+# any arbitrary identifier. 
+
+
+  # .platform.app.yaml, after all the rest ...
+mounts:
+  #  Laravel uses a directory off the root called "storage" for logs and cache.
+  "/storage/app": "shared:files/storage/app"
+  "/storage/app/public": "shared:files/storage/app/public"
+  "/storage/framework/views": "shared:files/storage/framework/views"
+  "/storage/framework/sessions": "shared:files/storage/framework/sessions"
+  "/storage/framework/cache": "shared:files/storage/framework/cache"
+  "/storage/logs": "shared:files/storage/logs"
+  # And another cache directory here.
+  "/bootstrap/cache": "shared:files/bootstrap_cache"
+hooks:
+   post_deploy: |
+     cp /app/run_queue.sh /app/storage/app/public/run_queue.sh
+     chmod 777 /app/storage/app/public/run_queue.sh
+     
+
+#  deploy: |
+#    mkdir -p storage/app/public
+#    mkdir -p storage/framework/views
+#    mkdir -p storage/framework/sessions
+#    mkdir -p storage/framework/cache
+#    mkdir -p storage/logs
+
+# Additional extensions
+runtime:
+    sizing_hints:
+        request_memory: 20
+        reserved_memory: 80  
+    extensions:
+        - mongodb
+        - redis
+        - curl
+variables:
+    php:
+        disable_functions: ''
+#workers:
+#    queue:
+#        size: S
+#        disk: 256
+#        commands:
+#            start: |
+#              php artisan queue:work  database --queue="default"
+
+
+#crons:
+#    queue:
+#        spec: '*/5 * * * *'
+#        cmd: '/app/storage/app/public/run_queue.sh'
+

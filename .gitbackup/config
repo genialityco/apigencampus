@@ -1,0 +1,24 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[submodule]
+	active = .
+[remote "origin"]
+	url = git@bitbucket.org:modev/eviusapilaravel.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "develop"]
+	remote = origin
+	merge = refs/heads/develop
+[branch "main"]
+	remote = origin
+	merge = refs/heads/geniality/main
+[user]
+        name = David Borja (prod)
+        email = davidborja456@gmail.com
+[pull]
+	rebase = false
+[remote "new-origin"]
+	url = git@github.com:genialityco/apigencampus.git
+	fetch = +refs/heads/*:refs/remotes/new-origin/*

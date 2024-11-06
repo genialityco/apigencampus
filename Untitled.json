@@ -1,0 +1,64 @@
+{
+    "event": "transaction.updated",
+    "data": {
+        "transaction": {
+            "id": "161579-1696391337-67222",
+            "created_at": "2023-10-04T03:48:58.251Z",
+            "finalized_at": "2023-10-04T03:49:01.712Z",
+            "amount_in_cents": 5000000,
+            "reference": "1696391295056-63f552d916065937427b3b02-642301fe13b36a78cd06ea03",
+            "customer_email": "ace@geniality.com.co",
+            "currency": "COP",
+            "payment_method_type": "CARD",
+            "payment_method": {
+                "type": "CARD",
+                "extra": {
+                    "bin": "424242",
+                    "name": "VISA-4242",
+                    "brand": "VISA",
+                    "exp_year": "35",
+                    "card_type": "CREDIT",
+                    "exp_month": "02",
+                    "last_four": "4242",
+                    "card_holder": "AAAAAAAAaa a",
+                    "is_three_ds": true,
+                    "three_ds_auth": {
+                        "three_ds_auth": {
+                            "current_step": "AUTHENTICATION",
+                            "current_step_status": "COMPLETED"
+                        }
+                    },
+                    "external_identifier": "CxHpVUYp0a",
+                    "processor_response_code": "00"
+                },
+                "token": "tok_test_61579_03f9E3459DfbB2C1CadE33996d0BDbf2",
+                "installments": 1
+            },
+            "status": "APPROVED",
+            "status_message": null,
+            "shipping_address": null,
+            "redirect_url": "http:\/\/localhost:5173\/paid-organization\/63f552d916065937427b3b02?finish=true&payment_event=true&user_id=642301fe13b36a78cd06ea03&assigned_to.names=ACE&assigned_to.email=ace%2540geniality.com.co&lang=ES",
+            "payment_source_id": null,
+            "payment_link_id": null,
+            "customer_data": {
+                "full_name": "ACE AA",
+                "phone_number": "+573111111"
+            },
+            "billing_data": {
+                "legal_id_type": "CC",
+                "legal_id": "2222222222"
+            }
+        }
+    },
+    "sent_at": "2023-10-04T03:49:02.577Z",
+    "timestamp": 1696391342,
+    "signature": {
+        "checksum": "523caac10901dbc27caea5791d82fc42cc99117868765550c31e457eb9160f30",
+        "properties": [
+            "transaction.id",
+            "transaction.status",
+            "transaction.amount_in_cents"
+        ]
+    },
+    "environment": "test"
+}

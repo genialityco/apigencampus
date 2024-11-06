@@ -1,0 +1,30 @@
+diff --git a/src/Models/Permission.php b/src/Models/Permission.php
+index 5b2dc52..366ea16 100644
+--- a/src/Models/Permission.php
++++ b/src/Models/Permission.php
+@@ -13,8 +13,8 @@ use Spatie\Permission\Exceptions\PermissionDoesNotExist;
+ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+ use Spatie\Permission\Exceptions\PermissionAlreadyExists;
+ use Spatie\Permission\Contracts\Permission as PermissionContract;
+-
+-class Permission extends Model implements PermissionContract
++use Moloquent;
++class Permission extends Moloquent implements PermissionContract
+ {
+     use HasRoles;
+     use RefreshesPermissionCache;
+diff --git a/src/Models/Role.php b/src/Models/Role.php
+index 893f442..1d0703e 100644
+--- a/src/Models/Role.php
++++ b/src/Models/Role.php
+@@ -12,8 +12,8 @@ use Spatie\Permission\Contracts\Role as RoleContract;
+ use Spatie\Permission\Traits\RefreshesPermissionCache;
+ use Illuminate\Database\Eloquent\Relations\MorphToMany;
+ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+-
+-class Role extends Model implements RoleContract
++use Moloquent;
++class Role extends Moloquent implements RoleContract
+ {
+     use HasPermissions;
+     use RefreshesPermissionCache;

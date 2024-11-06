@@ -1,0 +1,59 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentación API EVIUS",
+        "description": "EVIUS es una plataforma de eventos, donde se cubre la mayor parte del ciclo de vida del evento \n     *       (invitaciones, mercadeo, control de ingreso, experiencias dentro del evento, métricas)",
+        "contact": {
+            "email": "apps@evius.co"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://my-default-host.com",
+            "description": "API Server"
+        }
+    ],
+    "paths": {
+        "/users": {
+            "get": {
+                "summary": "Display a listing of the resource.",
+                "description": "Users",
+                "operationId": "App\\Http\\Controllers\\UserController::index",
+                "responses": {
+                    "default": {
+                        "description": "Listado de usuarios"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Store a newly created resource in storage.",
+                "description": "Crear",
+                "operationId": "App\\Http\\Controllers\\UserController::store",
+                "responses": {
+                    "default": {
+                        "description": "Listado de usuarios"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "requestBodies": {
+            "UserArray": {
+                "description": "List of user object",
+                "required": true
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Projects",
+            "description": "API Endpoints of Projects"
+        }
+    ]
+}

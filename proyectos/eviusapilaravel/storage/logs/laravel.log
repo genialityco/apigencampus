@@ -1,0 +1,106 @@
+[2021-04-09 15:35:07] local.DEBUG: recibiendo event_user  
+[2021-04-09 15:35:08] local.DEBUG: cargando datos event_user al correo  
+[2021-04-09 15:35:08] local.DEBUG: pasando a crear correo  
+[2021-04-09 15:35:10] local.DEBUG: Construyendo el correo de ticket  
+[2021-04-09 21:00:05] local.INFO: new cron  
+[2021-04-09 21:12:16] local.INFO: Firing the event  
+[2021-04-09 21:13:56] local.INFO: Firing the event  
+[2021-04-09 21:19:29] local.INFO: Firing the event  
+[2021-04-09 22:00:04] local.INFO: new cron  
+[2021-04-09 22:27:58] local.INFO: Pagando orden desde Payu  
+[2021-04-09 22:27:58] local.INFO: {"date":"2020.12.15 02:23:07","pse_reference3":null,"payment_method_type":"2","pse_reference2":null,"franchise":"MASTERCARD","commision_pol":"0.00","pse_reference1":null,"shipping_city":null,"bank_referenced_name":null,"sign":"4c15c3d63939440bd1220055721a29f5","extra2":null,"extra3":null,"operation_date":"2020-12-15 14:23:07","payment_request_state":"A","billing_address":null,"extra1":null,"administrative_fee":"0.00","administrative_fee_tax":"0.00","bank_id":"11","nickname_buyer":null,"payment_method":"11","attempts":"1","transaction_id":"a3223372-a085-43d1-82f2-212f07f169d1","transaction_date":"2020-12-15 14:23:07","test":"0","exchange_rate":"1.00","ip":"10.0.0.3","reference_pol":"121018423","cc_holder":"PRUEBA","tax":"0.00","antifraudMerchantId":null,"pse_bank":null,"state_pol":"4","billing_city":null,"phone":null,"error_message_bank":"0","shipping_country":"CO","error_code_bank":"00","cus":"651583","commision_pol_currency":null,"customer_number":null,"description":"Compra de Cursos","merchant_id":"508029","administrative_fee_base":"0.00","authorization_code":"RBM692","currency":"COP","shipping_address":null,"nickname_seller":null,"cc_number":"******5606","installments_number":"1","value":"2500000.00","transaction_bank_id":"RBM692","billing_country":"CO","response_code_pol":"1","payment_method_name":"MASTERCARD","office_phone":null,"email_buyer":"geraldine.garcia+11@mocionsoft.com","payment_method_id":"2","response_message_pol":"APPROVED","account_id":"512321","airline_code":null,"pseCycle":"null","risk":"0.0","reference_sale":"5ff4d55a33be073cdd1847eb","additional_value":"0.00"}  
+[2021-04-09 22:28:02] local.INFO: Change Order: 5ff4d55a33be073cdd1847eb Status: APPROVED  
+[2021-04-09 22:28:02] local.INFO: Borramos el cache de la orden: APPROVED  
+[2021-04-09 22:28:04] local.INFO: Estado guardado: 5ff4d55a33be073cdd1847eb order_reference: Completado  
+[2021-04-09 22:29:08] local.INFO: Pagando orden desde Payu  
+[2021-04-09 22:29:08] local.INFO: {"date":"2020.12.15 02:23:07","pse_reference3":null,"payment_method_type":"2","pse_reference2":null,"franchise":"MASTERCARD","commision_pol":"0.00","pse_reference1":null,"shipping_city":null,"bank_referenced_name":null,"sign":"4c15c3d63939440bd1220055721a29f5","extra2":null,"extra3":null,"operation_date":"2020-12-15 14:23:07","payment_request_state":"A","billing_address":null,"extra1":null,"administrative_fee":"0.00","administrative_fee_tax":"0.00","bank_id":"11","nickname_buyer":null,"payment_method":"11","attempts":"1","transaction_id":"a3223372-a085-43d1-82f2-212f07f169d1","transaction_date":"2020-12-15 14:23:07","test":"0","exchange_rate":"1.00","ip":"10.0.0.3","reference_pol":"121018423","cc_holder":"PRUEBA","tax":"0.00","antifraudMerchantId":null,"pse_bank":null,"state_pol":"4","billing_city":null,"phone":null,"error_message_bank":"0","shipping_country":"CO","error_code_bank":"00","cus":"651583","commision_pol_currency":null,"customer_number":null,"description":"Compra de Cursos","merchant_id":"508029","administrative_fee_base":"0.00","authorization_code":"RBM692","currency":"COP","shipping_address":null,"nickname_seller":null,"cc_number":"******5606","installments_number":"1","value":"2500000.00","transaction_bank_id":"RBM692","billing_country":"CO","response_code_pol":"1","payment_method_name":"MASTERCARD","office_phone":null,"email_buyer":"geraldine.garcia+11@mocionsoft.com","payment_method_id":"2","response_message_pol":"APPROVED","account_id":"512321","airline_code":null,"pseCycle":"null","risk":"0.0","reference_sale":"6070c4e15610ef79a84ab1d3","additional_value":"0.00"}  
+[2021-04-09 22:29:11] local.INFO: Change Order: 6070c4e15610ef79a84ab1d3 Status: APPROVED  
+[2021-04-09 23:00:03] local.INFO: new cron  
+[2021-04-10 00:00:02] local.INFO: new cron  
+[2021-05-03 14:00:02] local.INFO: new cron  
+[2021-05-03 14:00:08] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 14:00:08] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 14:00:08] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 14:00:08] local.INFO: FAILED  
+[2021-05-03 14:00:10] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 14:00:10] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 14:00:11] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 14:00:11] local.INFO: FAILED  
+[2021-05-03 14:00:12] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 14:00:12] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 14:00:13] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 14:00:13] local.INFO: FAILED  
+[2021-05-03 14:00:14] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 14:00:14] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 14:00:15] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 14:00:15] local.INFO: FAILED  
+[2021-05-03 14:00:17] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 14:00:17] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 14:00:17] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 14:00:17] local.INFO: FAILED  
+[2021-05-03 14:00:19] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 14:00:19] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 14:00:20] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 14:00:20] local.INFO: FAILED  
+[2021-05-03 14:00:21] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 14:00:21] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 14:00:22] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 14:00:22] local.INFO: FAILED  
+[2021-05-03 14:00:23] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 14:00:23] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 14:00:24] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 14:00:24] local.INFO: FAILED  
+[2021-05-03 14:00:25] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 14:00:26] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 14:00:26] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 14:00:26] local.INFO: FAILED  
+[2021-05-03 14:00:27] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 14:00:28] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 14:00:28] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 14:00:28] local.INFO: FAILED  
+[2021-05-03 15:00:03] local.INFO: new cron  
+[2021-05-03 15:00:09] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 15:00:10] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 15:00:10] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 15:00:10] local.INFO: FAILED  
+[2021-05-03 15:00:12] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 15:00:12] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 15:00:13] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 15:00:13] local.INFO: FAILED  
+[2021-05-03 15:00:14] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 15:00:15] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 15:00:15] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 15:00:15] local.INFO: FAILED  
+[2021-05-03 15:00:17] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 15:00:17] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 15:00:17] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 15:00:17] local.INFO: FAILED  
+[2021-05-03 15:00:18] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 15:00:18] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 15:00:19] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 15:00:19] local.INFO: FAILED  
+[2021-05-03 15:00:20] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 15:00:20] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 15:00:21] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 15:00:21] local.INFO: FAILED  
+[2021-05-03 15:00:22] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 15:00:23] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 15:00:23] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 15:00:23] local.INFO: FAILED  
+[2021-05-03 15:00:25] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 15:00:25] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 15:00:26] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 15:00:26] local.INFO: FAILED  
+[2021-05-03 15:00:27] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 15:00:28] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 15:00:28] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 15:00:28] local.INFO: FAILED  
+[2021-05-03 15:00:30] local.INFO: Change Order:  Status: FAILED  
+[2021-05-03 15:00:30] local.INFO: Borramos el cache de la orden: FAILED  
+[2021-05-03 15:00:31] local.INFO: Estado guardado:  order_reference: Fallido  
+[2021-05-03 15:00:31] local.INFO: FAILED  
+[2021-08-10 15:34:52] local.DEBUG: \App\Attendee::saved boot  
+[2021-08-10 15:34:52] local.DEBUG: \App\Attendee::saved boot  
+[2021-08-10 16:00:03] local.INFO: new cron  
+[2021-08-10 16:22:53] local.DEBUG: \App\Attendee::saved boot  
+[2021-08-10 16:27:06] local.DEBUG: \App\Attendee::saved boot  

@@ -1,0 +1,4 @@
+.unsubscribe{
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/eviusauth.appspot.com/o/evius%2FViews%2FFondo<?= config('app.name') ?>.png?alt=media&token=20ac558d-fda3-4dc1-8795-3911c9194fc7");
+    background-repeat: repeat;
+  }

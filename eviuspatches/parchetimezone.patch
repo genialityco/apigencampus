@@ -1,0 +1,13 @@
+diff --git a/src/PropertyTypes/DateTimePropertyType.php b/src/PropertyTypes/DateTimePropertyType.php
+index 4406b37..c1e4038 100644
+--- a/src/PropertyTypes/DateTimePropertyType.php
++++ b/src/PropertyTypes/DateTimePropertyType.php
+@@ -63,7 +63,7 @@ final class DateTimePropertyType extends PropertyType
+ 
+     public function getValue(): string
+     {
+-        $format = $this->withTime ? 'Ymd\THis' : 'Ymd';
++        $format = $this->withTime ? 'Ymd\THis\Z' : 'Ymd';
+ 
+         return $this->dateTime->format($format); 
+     }

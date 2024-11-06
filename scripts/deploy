@@ -1,0 +1,9 @@
+#!/bin/sh
+
+ssh root@devapi.evius.co <<EOF
+  cd eviusapilaravel
+  git pull
+  cd laradock
+  docker-compose run --rm workspace ./artisan config:cache && docker-compose run --rm workspace ./artisan route:cache
+  exit
+EOF

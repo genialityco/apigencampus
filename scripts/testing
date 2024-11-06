@@ -1,0 +1,7 @@
+#!/bin/sh
+
+ssh root@devapi.evius.co <<EOF
+  cd eviusapilaravel/laradock
+  docker-compose run --rm workspace ./vendor/bin/phpunit --filter IntegrationTest
+  exit
+EOF

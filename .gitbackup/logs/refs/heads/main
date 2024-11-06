@@ -1,0 +1,77 @@
+0000000000000000000000000000000000000000 4de36a0a3e0941ce612002008cdf83cc4875f7a2 root <root@gendev.(none)> 1682365851 +0000	branch: Created from refs/remotes/origin/geniality/main
+4de36a0a3e0941ce612002008cdf83cc4875f7a2 5c8aae14bc0bebf25a8852b982ed1e03eb828309 root <root@gendev.(none)> 1682365948 +0000	pull: Fast-forward
+5c8aae14bc0bebf25a8852b982ed1e03eb828309 5a7c07b09646187f65c026e7d4eba7a9b9a54640 David Borja (prod) <davidborja456@gmail.com> 1682483962 +0000	pull: Fast-forward
+5a7c07b09646187f65c026e7d4eba7a9b9a54640 9cdf8773219e913be92b4fedf8f323b5bfea38b9 David Borja (prod) <davidborja456@gmail.com> 1682488559 +0000	pull: Fast-forward
+9cdf8773219e913be92b4fedf8f323b5bfea38b9 7e5140ef740d1227d62ffa24a71ab2ad0d62d158 David Borja (prod) <davidborja456@gmail.com> 1682488581 +0000	commit: Rename firebase credentials file to prod
+7e5140ef740d1227d62ffa24a71ab2ad0d62d158 3005c65a61c7d76c407db97e7a9378c2249ee192 David Borja (prod) <davidborja456@gmail.com> 1682514654 +0000	commit: Update firebase credentials for production
+3005c65a61c7d76c407db97e7a9378c2249ee192 e45c7f42a3f2da5a5fb84bfcea5780e68e5fbeb6 David Borja (prod) <davidborja456@gmail.com> 1682642730 +0000	commit (merge): Merge remote-tracking branch 'origin/geniality/beta' into geniality/main
+e45c7f42a3f2da5a5fb84bfcea5780e68e5fbeb6 d2894b9e45f5f2ea5b1fb351e22b548afa429b78 David Borja (prod) <davidborja456@gmail.com> 1683691647 +0000	commit (merge): Merge remote-tracking branch 'origin/geniality/beta' into geniality/main
+d2894b9e45f5f2ea5b1fb351e22b548afa429b78 7a24d60ee979374137e0374a7f2914339bf8a049 David Borja (prod) <davidborja456@gmail.com> 1684183909 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+7a24d60ee979374137e0374a7f2914339bf8a049 76992b44a4d6e9269e3448144bc3d4f449b9e1a2 David Borja (prod) <davidborja456@gmail.com> 1684206991 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+76992b44a4d6e9269e3448144bc3d4f449b9e1a2 5e3fcf8ac8261a5b5008ffdf9165bebf91b45b8e David Borja (prod) <davidborja456@gmail.com> 1684240027 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+5e3fcf8ac8261a5b5008ffdf9165bebf91b45b8e 6f1e0a8cdf835e0a522acde49f269cf188881d78 David Borja (prod) <davidborja456@gmail.com> 1684335714 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+6f1e0a8cdf835e0a522acde49f269cf188881d78 ce9565aab07ad928aae793650a9fc19e9155d1f8 David Borja (prod) <davidborja456@gmail.com> 1684973262 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+ce9565aab07ad928aae793650a9fc19e9155d1f8 d5bd09eddf36524c70ef795c13fd4cacbdf08a33 David Borja (prod) <davidborja456@gmail.com> 1685042886 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+d5bd09eddf36524c70ef795c13fd4cacbdf08a33 8b7c0a021de9d0b95ec6e0e1f6383c9f3702cc52 David Borja (prod) <davidborja456@gmail.com> 1685158872 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+8b7c0a021de9d0b95ec6e0e1f6383c9f3702cc52 b276ad58f8a32bc021526a5716f19481a29b11ef David Borja (prod) <davidborja456@gmail.com> 1685379396 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+b276ad58f8a32bc021526a5716f19481a29b11ef 77cb3a1d52e6074aaa250404aed3efeed006a83e David Borja (prod) <davidborja456@gmail.com> 1685569918 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+77cb3a1d52e6074aaa250404aed3efeed006a83e c37fe117ee62536562b5acfcb00f9b8ce7599798 David Borja (prod) <davidborja456@gmail.com> 1685649214 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+c37fe117ee62536562b5acfcb00f9b8ce7599798 5334910f087991353e08a781a15b01d219a78d3d David Borja (prod) <davidborja456@gmail.com> 1685726149 +0000	pull: Merge made by the 'ort' strategy.
+5334910f087991353e08a781a15b01d219a78d3d 14aaf6efadf07abf16b2d22b999c4230221ab327 David Borja (prod) <davidborja456@gmail.com> 1685728885 +0000	pull: Merge made by the 'ort' strategy.
+14aaf6efadf07abf16b2d22b999c4230221ab327 54f27603d4fefd94ba47a274c64df570a9944495 David Borja (prod) <davidborja456@gmail.com> 1685729480 +0000	pull: Merge made by the 'ort' strategy.
+54f27603d4fefd94ba47a274c64df570a9944495 3a3023d7de892933e9917d9e149c554e7c2d3072 David Borja (prod) <davidborja456@gmail.com> 1685729601 +0000	pull: Merge made by the 'ort' strategy.
+3a3023d7de892933e9917d9e149c554e7c2d3072 6312c5a6fdd57771e51328978b8ac8a1919a4cfa David Borja (prod) <davidborja456@gmail.com> 1685729647 +0000	pull: Merge made by the 'ort' strategy.
+6312c5a6fdd57771e51328978b8ac8a1919a4cfa 46ec202102cbccac95f5eb6c7bd9f5f061fb344c David Borja (prod) <davidborja456@gmail.com> 1685729729 +0000	pull: Merge made by the 'ort' strategy.
+46ec202102cbccac95f5eb6c7bd9f5f061fb344c c1f482a30de8686a6d9142e127ca9899c26a4e55 David Borja (prod) <davidborja456@gmail.com> 1685730070 +0000	pull: Merge made by the 'ort' strategy.
+c1f482a30de8686a6d9142e127ca9899c26a4e55 2638ded1490d1b748e7a015515d6af55509c27c4 David Borja (prod) <davidborja456@gmail.com> 1685730537 +0000	pull: Merge made by the 'ort' strategy.
+2638ded1490d1b748e7a015515d6af55509c27c4 5586c97e20c1f2ac2f972f569861891975e6d480 David Borja (prod) <davidborja456@gmail.com> 1685980179 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+5586c97e20c1f2ac2f972f569861891975e6d480 8f1a2f1b8f91c27283795f485cf89c2504a09797 David Borja (prod) <davidborja456@gmail.com> 1685993055 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+8f1a2f1b8f91c27283795f485cf89c2504a09797 1f4bb3ac456bb9cd3dfebbc9338fcdf0dd2822eb David Borja (prod) <davidborja456@gmail.com> 1686109318 +0000	pull: Merge made by the 'ort' strategy.
+1f4bb3ac456bb9cd3dfebbc9338fcdf0dd2822eb 8c22fcbf02d49db6ee45d3299e022c1fa4da5c98 David Borja (prod) <davidborja456@gmail.com> 1686110038 +0000	pull: Merge made by the 'ort' strategy.
+8c22fcbf02d49db6ee45d3299e022c1fa4da5c98 1de45d940d63ee33253cb49b5e5b1cef687d2006 David Borja (prod) <davidborja456@gmail.com> 1686113248 +0000	pull: Merge made by the 'ort' strategy.
+1de45d940d63ee33253cb49b5e5b1cef687d2006 0024677a68ddcee348ff163e72aa4471c86748ae David Borja (prod) <davidborja456@gmail.com> 1686114349 +0000	pull: Merge made by the 'ort' strategy.
+0024677a68ddcee348ff163e72aa4471c86748ae b3736ad72f68845bcca129863e39f07184e8a57c David Borja (prod) <davidborja456@gmail.com> 1686123933 +0000	pull: Merge made by the 'ort' strategy.
+b3736ad72f68845bcca129863e39f07184e8a57c 37ba9ff5271be4d32c38a09eef6f4afc01b68071 David Borja (prod) <davidborja456@gmail.com> 1687231064 +0000	pull: Merge made by the 'ort' strategy.
+37ba9ff5271be4d32c38a09eef6f4afc01b68071 1bc44935966662a2534260b51ed2e82a94bbec22 David Borja (prod) <davidborja456@gmail.com> 1687385717 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+1bc44935966662a2534260b51ed2e82a94bbec22 cbaee0b80262e0eb1e65a4373d92dbc9627e60b1 David Borja (prod) <davidborja456@gmail.com> 1687389784 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+cbaee0b80262e0eb1e65a4373d92dbc9627e60b1 0e5692f0dfbb20d25e1370ecdcb670b853745efd David Borja (prod) <davidborja456@gmail.com> 1687972399 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+0e5692f0dfbb20d25e1370ecdcb670b853745efd 9fb9e940bf73ba76ae8a8fd7d972918cb3bd00a6 David Borja (prod) <davidborja456@gmail.com> 1690288675 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+9fb9e940bf73ba76ae8a8fd7d972918cb3bd00a6 1b09eec835205ffb83a8eca2ddc962fe0067e7ec David Borja (prod) <davidborja456@gmail.com> 1690460965 +0000	pull: Fast-forward
+1b09eec835205ffb83a8eca2ddc962fe0067e7ec d43882e8316193beea4a16edce04b1c26f3fd46e David Borja (prod) <davidborja456@gmail.com> 1691589069 +0000	pull: Fast-forward
+d43882e8316193beea4a16edce04b1c26f3fd46e 5f18bc7b651e2da6b489e070ac346ba501e35204 David Borja (prod) <davidborja456@gmail.com> 1692839249 +0000	commit: add: endpoint path to generate a magic link and respond
+5f18bc7b651e2da6b489e070ac346ba501e35204 783958823b0e41e38b9849fa82cbd0acad48e1f8 David Borja (prod) <davidborja456@gmail.com> 1694545046 +0000	commit (merge): Merge remote-tracking branch 'origin/geniality/beta' into geniality/main
+783958823b0e41e38b9849fa82cbd0acad48e1f8 2c056afb350b24a25fe4b86f63b68b623e68b788 David Borja (prod) <davidborja456@gmail.com> 1695046441 +0000	commit: fix: validation removed rtc protocol for organization email
+2c056afb350b24a25fe4b86f63b68b623e68b788 d4e68a66dbe64a38e4fb64101ba120336274cf79 David Borja (prod) <davidborja456@gmail.com> 1695151424 +0000	commit: add: extra_landing_resource
+d4e68a66dbe64a38e4fb64101ba120336274cf79 63ff548838846dd7b3a2958e96dd6deccb67efee David Borja (prod) <davidborja456@gmail.com> 1695151445 +0000	commit (amend): add: extra_landing_resources
+63ff548838846dd7b3a2958e96dd6deccb67efee 247bfdf58d21b151a1f1b03be2311224af5b0c9c David Borja (prod) <davidborja456@gmail.com> 1695262583 +0000	commit: change: send a backup email to our email address
+247bfdf58d21b151a1f1b03be2311224af5b0c9c 5be6a56d612e89907df4f566dc36905b0a0019e8 David Borja (prod) <davidborja456@gmail.com> 1695262676 +0000	commit: change: comment a code that should be better written
+5be6a56d612e89907df4f566dc36905b0a0019e8 ca2c837d185edb788530264bfd0e72843dd2ac95 David Borja (prod) <davidborja456@gmail.com> 1695262815 +0000	commit: add: the real file of RSVPController
+ca2c837d185edb788530264bfd0e72843dd2ac95 b8565f2349fac9f4eff38a3907001f3b7346ddd4 David Borja (prod) <davidborja456@gmail.com> 1695262914 +0000	commit (merge): Merge remote-tracking branch 'origin/geniality/beta' into geniality/main
+b8565f2349fac9f4eff38a3907001f3b7346ddd4 30b7604938026e5c62e1b36a18e3d8617e7d3b8f David Borja (prod) <davidborja456@gmail.com> 1696421927 +0000	commit: fix: wompi + organization user payment plan endpoint
+30b7604938026e5c62e1b36a18e3d8617e7d3b8f 4d994ce61bff7fc560a5d0f4a849b02378784c2c David Borja (prod) <davidborja456@gmail.com> 1696421960 +0000	commit: fix: assignment of payment plan or removing
+4d994ce61bff7fc560a5d0f4a849b02378784c2c 5a13daf1982ba676b2c423b910ad26645b9fb8b1 David Borja (prod) <davidborja456@gmail.com> 1696422119 +0000	commit: add: endpoint to show all attendees of event
+5a13daf1982ba676b2c423b910ad26645b9fb8b1 5ea35d98d3e6a8c8a099b4ff3c663822315979da David Borja (prod) <davidborja456@gmail.com> 1696422356 +0000	commit: add: endpoint to reset password to default "ID" (bad idea)
+5ea35d98d3e6a8c8a099b4ff3c663822315979da e2b6ca807d17edc3ad894ddad198e8c0507e6da8 David Borja (prod) <davidborja456@gmail.com> 1696574324 +0000	commit: add: endpoint that ACE wants
+e2b6ca807d17edc3ad894ddad198e8c0507e6da8 6013c614787e60f5f7f78990cd71f3c8b731daaa David Borja (prod) <davidborja456@gmail.com> 1696574479 +0000	commit: add: prototype of feature to search candidates for certificates
+6013c614787e60f5f7f78990cd71f3c8b731daaa 7fa73192eefb99851f1147ae4e540161770d3df7 David Borja (prod) <davidborja456@gmail.com> 1696604558 +0000	commit: change: flat the certs array
+7fa73192eefb99851f1147ae4e540161770d3df7 06da8e8a53d3bede6173a26c8377e136c121f0fe David Borja (prod) <davidborja456@gmail.com> 1696958697 +0000	commit: change: why somebody forgot update all user's attendees and organization users
+06da8e8a53d3bede6173a26c8377e136c121f0fe 3f0a4f16ae6465442d36408ac3379f93c18aebf4 David Borja (prod) <davidborja456@gmail.com> 1697052338 +0000	commit: improve: the search engineer of organization members
+3f0a4f16ae6465442d36408ac3379f93c18aebf4 19af0fefae2cc3e7438c49a5bd340cf131464bf1 David Borja (prod) <davidborja456@gmail.com> 1697053865 +0000	commit: change: remove deprecated mark because the new version isn't stable
+19af0fefae2cc3e7438c49a5bd340cf131464bf1 7dbdb68feddeca393e318b849094257314713ea9 David Borja (prod) <davidborja456@gmail.com> 1697053892 +0000	commit: fix: stop searching by organization users and search by event users
+7dbdb68feddeca393e318b849094257314713ea9 755c256ba61870448d2c13de66ed62d627c4662d David Borja (prod) <davidborja456@gmail.com> 1697557531 +0000	commit: add: show_link_to_certificate_search_page for Organization
+755c256ba61870448d2c13de66ed62d627c4662d 0f6ca6abeca2a32662ca3086bcaf2217233db67d David Borja (prod) <davidborja456@gmail.com> 1697672062 +0000	commit: add: controller to download vimeo video from public link
+0f6ca6abeca2a32662ca3086bcaf2217233db67d b348330a601abc56ae2dbcfb4ac88d06713c5da4 David Borja (prod) <davidborja456@gmail.com> 1698262246 +0000	commit: change: move an endpoint out middleware
+b348330a601abc56ae2dbcfb4ac88d06713c5da4 fe707e28e9abc4bf9d9039f83f5542aa577300aa David Borja (prod) <davidborja456@gmail.com> 1698262550 +0000	commit: change: some things without new feature
+fe707e28e9abc4bf9d9039f83f5542aa577300aa 449b99048394d572dde3f995c827d719d1c5a7be David Borja (prod) <davidborja456@gmail.com> 1698262623 +0000	commit (amend): change: some things without new feature
+449b99048394d572dde3f995c827d719d1c5a7be 6bc16983af0f80d7b860f4977629c117e500fbfa David Borja (prod) <davidborja456@gmail.com> 1698262719 +0000	commit (merge): Merge remote-tracking branch 'origin/geniality/beta' into geniality/main
+6bc16983af0f80d7b860f4977629c117e500fbfa 6a55f7cad539daedb0d406cd8bf6ebcacb83e569 David Borja (prod) <davidborja456@gmail.com> 1698263254 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+6a55f7cad539daedb0d406cd8bf6ebcacb83e569 723f2c09d296be451d5c8624f157c9da54f65736 David Borja (prod) <davidborja456@gmail.com> 1698885680 +0000	commit: improve: organization user search motor
+723f2c09d296be451d5c8624f157c9da54f65736 eb7e545bc0e8da2b426a21ce58f85d8431b59221 David Borja (prod) <davidborja456@gmail.com> 1699002423 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+eb7e545bc0e8da2b426a21ce58f85d8431b59221 ee11100aaba31c4afcd06488ea685ff2bfe9aa1b David Borja (prod) <davidborja456@gmail.com> 1699005252 +0000	merge origin/geniality/beta: Merge made by the 'ort' strategy.
+ee11100aaba31c4afcd06488ea685ff2bfe9aa1b 80dda71112b2361313d085c091068e7de0841fe6 David Borja (prod) <davidborja456@gmail.com> 1699554145 +0000	commit: fix: unbound class
+80dda71112b2361313d085c091068e7de0841fe6 3e45be3f3dc10126674010bd32fdc37a56bb23c4 David Borja (prod) <davidborja456@gmail.com> 1699560453 +0000	commit: add: new endpoint to join user and organization member properties
+3e45be3f3dc10126674010bd32fdc37a56bb23c4 bc7c2e2f3568731f9d3f61edead17c2f0f4a6ad1 David Borja (prod) <davidborja456@gmail.com> 1700440422 +0000	pull: Fast-forward
+bc7c2e2f3568731f9d3f61edead17c2f0f4a6ad1 2aeaf5c45d53c274acf18025b894ec76a7f5f01e David Borja (prod) <davidborja456@gmail.com> 1700440552 +0000	pull: Fast-forward
+2aeaf5c45d53c274acf18025b894ec76a7f5f01e 470f6baf2f767ef43cfc9c86a551cc049e751566 David Borja (prod) <davidborja456@gmail.com> 1700440669 +0000	pull: Fast-forward
+470f6baf2f767ef43cfc9c86a551cc049e751566 470f6baf2f767ef43cfc9c86a551cc049e751566 David Borja (prod) <davidborja456@gmail.com> 1730926907 +0000	Branch: renamed refs/heads/geniality/main to refs/heads/main
+470f6baf2f767ef43cfc9c86a551cc049e751566 dba3bb950a1f8e979ba65e8bb429304b96274d85 David Borja (prod) <davidborja456@gmail.com> 1730926980 +0000	commit: migration commit

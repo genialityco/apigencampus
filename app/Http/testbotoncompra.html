@@ -1,0 +1,54 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.18.0/js/md5.min.js" integrity="sha512-Hmp6qDy9imQmd15Ds1WQJ3uoyGCUz5myyr5ijainC1z+tP7wuXcze5ZZR3dF7+rkRALfNy7jcfgS5hH8wJ/2dQ==" crossorigin="anonymous"></script>
+
+<!-- http://developers.payulatam.com/en/web_checkout/sandbox.html-->
+<!-- 	 * para exponer temporalmente mi localhost usar la app ngrok para que servicios
+	 * o personas externas puedan acceder a los servidores en mi computador-->
+<form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
+  <input type="image" border="0" alt="" src="http://www.payulatam.com/img-secure-2015/boton_pagar_pequeno.png" onClick="this.form.urlOrigen.value = window.location.href;"/>
+  <input name="buttonId" type="hidden" value="UcNSM97VChAMi5VY45VLRstImRc6P7o3Fks7YPf2QjBEMbYKaT2MIA=="/>
+  <input name="merchantId" type="hidden" value="912808"/>
+  <input name="buyerEmail" type="hidden" value="geraldine.garcia@mocionsoft.com"/>
+  <input name="ApiKey" type="hidden" value="1OnKMIby73U4Zp66qjAZ2vyZoz"/>
+  <input name="accountId" type="hidden" value="919619"/>
+  <input name="description" type="hidden" value="asdfsadf"/>
+  <input name="referenceCode" type="hidden" value="5fd90cacae5762445257daad"/>
+  <input name="amount" type="hidden" value="10000.00"/>
+  <input name="tax" type="hidden" value="0.00"/>
+  <input name="taxReturnBase" type="hidden" value="0.00"/>
+  <input name="shipmentValue" value="0.00" type="hidden"/>
+  <input name="currency" type="hidden" value="COP"/>
+  <input name="lng" type="hidden" value="es"/>
+  <input name="test" type="hidden" value="1"/>
+  <input name="approvedResponseUrl" type="hidden" value="https://b359fde7ece9.ngrok.io/api/payment_webhook_response"/>
+  <input name="declinedResponseUrl" type="hidden" value="https://b359fde7ece9.ngrok.io/api/payment_webhook_response"/>
+  <input name="pendingResponseUrl" type="hidden" value="https://b359fde7ece9.ngrok.io/api/payment_webhook_response"/>
+  <input name="responseUrl"        type="hidden" value="https://b359fde7ece9.ngrok.io/api/payment_webhook_response"/>
+  <input name="confirmationUrl" type="hidden" value="https://b359fde7ece9.ngrok.io/api/payment_webhook_response"/>
+
+
+
+  <input name="sourceUrl" id="urlOrigen" value="" type="hidden"/>
+  <input name="buttonType" value="SIMPLE" type="hidden"/>
+  <input id="signature"     name="signature" value="" type="hidden"/>
+  
+<script>
+function calculateSignature(e) {
+	console.log(e);
+	let merchantId    = document.getElementsByName("merchantId")[0].value;
+	let referenceCode = document.getElementsByName("referenceCode")[0].value;
+	let amount        = document.getElementsByName("amount")[0].value;
+	let currency      = document.getElementsByName("currency")[0].value;
+	let apiKey        = document.getElementsByName("ApiKey")[0].value;
+
+
+    const str = [
+        apiKey, merchantId, referenceCode, amount, currency
+	].join('~');
+	document.getElementById("signature").value  = md5(str);
+	alert(md5(str));
+    return md5(str);
+}
+calculateSignature();
+</script>
+
+</form>
