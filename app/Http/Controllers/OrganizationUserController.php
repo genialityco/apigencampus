@@ -13,12 +13,14 @@ use App\Event;
 use App\Http\Resources\OrganizationUserResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\OrganizationUser;
+use App\PaymentPlan;
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
 use Log;
 use Mail;
 use App\evaLib\Services\OrganizationServices;
+use App\Payments;
 
 /** 
  * @group Organization User
@@ -180,23 +182,36 @@ class OrganizationUserController extends Controller
     {        
         $data = $request->json()->all();
         $userOrganization = OrganizationUser::findOrFail($organization_user_id);
+        
+        
         if (!isset($data["rol_id"])) {
             $userOrganization["rol_id"] = Rol::ID_ROL_ATTENDEE;
         } else {
             $userOrganization["rol_id"] = $data["rol_id"];
         }
-        $userOrganization->properties = $data;
 
+      
         // Log::debug("new payment_plan: ".json_encode($data['payment_plan']));
 
-        // if (isset($data['payment_plan'])) {
+        if (isset($data['payment_plan'])) {
+            $userOrganization["payment_plan"] = $data['payment_plan'];
+            $paymentplan = PaymentPlan::where('organization_user_id',$organization_user_id)->first;
+            if ($paymentplan){
+                $userOrganization['payment_plan_id'] = $paymentplan->_id;
+                $paymentplan->fill($data['payment_plan'])->save();
+            }else{
+                $userOrganization->payment_plan()->create($data['payment_plan']);
+            }
+
+
+
         //     $userOrganization['payment_plan'] = null;
         //     Log::debug("user id: " . $userOrganization["account_id"] . " and org user id: " . $userOrganization["_id"] . " changed payment plan to " . json_encode($data['payment_plan']));
         //     $userOrganization['payment_plan'] = $data['payment_plan'];
         // } else if ($data['payment_plan'] == null) {
         //     // Remove the payment
         //     $userOrganization['payment_plan'] = null;
-        // }
+        }
         $userOrganization->save();
         return $userOrganization;
     }

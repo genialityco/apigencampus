@@ -17,4 +17,9 @@ class PaymentPlan extends Moloquent
         // updated_at (automatic) is used by reporting
     ];
 
+    public function organization_user()
+    {
+        return $this->hasOne('App\OrganizationUser', 'payment_plan_id');
+    }
+
 }
