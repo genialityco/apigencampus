@@ -195,7 +195,7 @@ class OrganizationUserController extends Controller
 
         if (isset($data['payment_plan'])) {
             $userOrganization["payment_plan"] = $data['payment_plan'];
-            $paymentplan = PaymentPlan::where('organization_user_id',$organization_user_id)->first;
+            $paymentplan = PaymentPlan::where('organization_user_id',$organization_user_id)->first();
             if ($paymentplan){
                 $userOrganization['payment_plan_id'] = $paymentplan->_id;
                 $paymentplan->fill($data['payment_plan'])->save();
