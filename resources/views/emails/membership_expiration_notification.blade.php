@@ -29,7 +29,7 @@
     <p>¡Te esperamos de vuelta!</p>
 
     <p style="text-align: center; margin: 20px 0;">
-        <a href="https://app.geniality.com.co/myprofile/myPlan" style="background-color: #1E90FF; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+        <a href="{{ $authLink }}" style="background-color: #1E90FF; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
             Activa nuevamente tu membresía aquí
         </a>
     </p>

@@ -15,15 +15,17 @@ class MembershipExpirationNotification extends Mailable
     public $user;
     public $plan;
     public $notificationType;
+    public $authLink;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($user, $plan, $notificationType)
+    public function __construct($user, $plan, $notificationType, $authLink)
     {
         $this->user = $user;
         $this->plan = $plan;
         $this->notificationType = $notificationType;
+        $this->authLink = $authLink;
     }
 
     /**
@@ -33,8 +35,8 @@ class MembershipExpirationNotification extends Mailable
     {
          $expirationDate = Carbon::parse($this->plan->date_until)->format('d-m-Y hh:mm:ss');
         $subject = $this->notificationType === 'Proximidad de expiración' 
-            ? 'Tu membresía está próxima a vencer' . $expirationDate
-            : 'Tu membresía ha vencido' . $expirationDate;
+            ? 'Tu membresía está próxima a vencer'
+            : 'Tu membresía ha vencido';
     
         Log::info('Enviando correo de notificación de membresía', [
             'user_email' => $this->user->properties['email'],
@@ -42,9 +44,14 @@ class MembershipExpirationNotification extends Mailable
             'price' => $this->plan->price,
             'notificationType' => $this->notificationType,
             'subject' => $subject ,
+            'authLink' => $this->authLink,
         ]);
     
-        return $this->subject($subject)
-                    ->view('emails.membership_expiration_notification');
+        return $this->from('alert@geniality.com.co', 'Endocampus ACE')
+                    ->subject($subject)
+                    ->view('emails.membership_expiration_notification')
+                    ->with([
+                        'authLink' => $this->authLink,
+                    ]);
     }    
 }

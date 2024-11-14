@@ -28,8 +28,8 @@ class CheckMembershipExpiration implements ShouldQueue
     public function handle()
     {
         $plans = $this->paymentPlanId ? 
-        collect([PaymentPlan::find($this->paymentPlanId)]) : collect([PaymentPlan::find('672d302c0f5dd30d9f075eb2')]);
-
+        collect([PaymentPlan::find($this->paymentPlanId)]) : collect([PaymentPlan::find('6735fca3be35f903cf037592')]);
+    
         foreach ($plans as $plan) {
             if ($plan) {
                 $user = OrganizationUser::find($plan->organization_user_id);
@@ -37,46 +37,43 @@ class CheckMembershipExpiration implements ShouldQueue
                     $expirationDate = Carbon::parse($plan->date_until);
                     $now = Carbon::now();
                     $oneWeekLater = $now->copy()->addDays(7);
-
-                    Log::info('Fechas para verificación de expiración', [
-                        'now' => $now->toDateTimeString(),
-                        'oneWeekLater' => $oneWeekLater->toDateTimeString(),
-                        'expirationDate' => $expirationDate->toDateTimeString(),
-                        'isBetween' => $expirationDate->isBetween($now, $oneWeekLater),
-                    ]);
-
+    
                     if ($expirationDate->isBetween($now, $oneWeekLater)) {
                         $notificationType = 'Proximidad de expiración';
-
-                        Log::info('Enviando correo de proximidad de expiración', [
-                            'user_email' => $user->properties['email'],
-                            'expiration_date' => $plan->date_until,
-                            'price' => $plan->price,
-                        ]);
-
-                        $mailable = new MembershipExpirationNotification($user, $plan, $notificationType);
+                        $authLink = $this->generateAuthLink($user->properties['email'], $plan->id);
+    
+                        $mailable = new MembershipExpirationNotification($user, $plan, $notificationType, $authLink);
                         Mail::to($user->properties['email'])->send($mailable);
-
-                        dump('Correo enviado');
-
                     } elseif ($expirationDate->isPast()) {
                         $notificationType = 'Expiración';
-
-                        Log::info('Enviando correo de expiración', [
-                            'user_email' => $user->properties['email'],
-                            'expiration_date' => $plan->date_until,
-                            'price' => $plan->price,
-                        ]);
-
-                        $mailable = new MembershipExpirationNotification($user, $plan, $notificationType);
+                        $authLink = $this->generateAuthLink($user->properties['email'], $plan->id);
+    
+                        $mailable = new MembershipExpirationNotification($user, $plan, $notificationType, $authLink);
                         Mail::to($user->properties['email'])->send($mailable);
                     }
-                } else {
-                    Log::warning("No se encontró el usuario para organization_user_id: {$plan->organization_user_id}");
                 }
-            } else {
-                Log::warning("No se encontró el plan con id: {$this->paymentPlanId}");
             }
         }
     }
+    
+    private function generateAuthLink($email, $event_id = null)
+    {
+        $auth = resolve('Kreait\Firebase\Auth');
+        $urlOrigin = 'https://app.geniality.com.co'; 
+    
+        $continueUrl = $urlOrigin . "/loginWithCode?email=" . urlencode($email);
+    
+        if ($event_id) {
+            $continueUrl .= "&organization=63f552d916065937427b3b02";
+        }
+    
+        return $auth->getSignInWithEmailLink(
+            $email,
+            [
+                "url" => $continueUrl,
+            ]
+        );
+    }
+    
+    
 }

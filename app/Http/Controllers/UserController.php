@@ -643,57 +643,61 @@ class UserController extends UserControllerWeb
     public function getAccessLink(Request $request) 
     {
         $auth = resolve('Kreait\Firebase\Auth');
-
+    
+        // Verifica que el encabezado "origin" esté presente
         $urlOrigin = $request->header('origin');
+        if (!isset($urlOrigin)) {
+            return response()->json([
+                "message" => "Missing the \"origin\" header in the request"
+            ], 403);
+        }
+    
+        // Valida que se reciba el email en el request
         $request->validate([
             "email" => "required|email:rfc,dns",            
         ]);
         $data = $request->all();
         
         $email = $data["email"];
-        
-
-	    $urlOrigin = $request->header('origin');
-        if (!isset($urlOrigin)) {
-            return response()->json([
-                "message" => "Missing the \"origin\" header in the request"
-            ] , 403);
-        }
-
         $link = '';
-        $event_id = null;
-        if(isset($data['event_id']))
-        {   
+    
+        // Verifica si se envía organization o event_id
+        if (isset($data['organization'])) {
+            // Si se envía organization, lo añade como parámetro en la URL
+            $organizationId = $data['organization'];
+            $link = $auth->getSignInWithEmailLink(
+                $email,
+                [
+                    "url" => $urlOrigin . "/loginWithCode?email=" . urlencode($email) . "&organization=" . $organizationId,
+                ]    
+            );
+        } elseif (isset($data['event_id'])) {
+            // Si se envía event_id, lo añade como parámetro en la URL
             $event_id = $data['event_id'];
-
             $link = $auth->getSignInWithEmailLink(
                 $email,
                 [
-                    "url" => $urlOrigin . "/loginWithCode?email=". urlencode($email) . "&event_id=" . $event_id,
+                    "url" => $urlOrigin . "/loginWithCode?email=" . urlencode($email) . "&event_id=" . $event_id,
                 ]    
             );
-
-        }else{  
-            
+        } else {
+            // Si no se envía ni organization ni event_id, genera el enlace solo con email
             $link = $auth->getSignInWithEmailLink(
                 $email,
                 [
-                    "url" => $urlOrigin . "/loginWithCode?email=". urlencode($email),
+                    "url" => $urlOrigin . "/loginWithCode?email=" . urlencode($email),
                 ]    
-            );
-
-        } 
-        if(!isset($data['refreshlink']))    
-        {
-            Mail::to($email)
-            ->queue(
-                new \App\Mail\LoginMail($link , $event_id, $email)
             );
         }
-        
+    
+        // Envia el correo si no se requiere el enlace de refresco
+        if (!isset($data['refreshlink'])) {
+            Mail::to($email)->queue(new \App\Mail\LoginMail($link, $event_id ?? null, $email));
+        }
         
         return $link;
     }
+    
 
     /**
      * _signInWithEmailLink_: this end point start the login when the user does click in the link
