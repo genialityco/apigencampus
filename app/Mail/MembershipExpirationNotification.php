@@ -38,14 +38,14 @@ class MembershipExpirationNotification extends Mailable
             ? 'Tu membresía está próxima a vencer'
             : 'Tu membresía ha vencido';
     
-        Log::info('Enviando correo de notificación de membresía', [
-            'user_email' => $this->user->properties['email'],
-            'expiration_date' => $this->plan->date_until,
-            'price' => $this->plan->price,
-            'notificationType' => $this->notificationType,
-            'subject' => $subject ,
-            'authLink' => $this->authLink,
-        ]);
+        // Log::info('Enviando correo de notificación de membresía', [
+        //     'user_email' => $this->user->properties['email'],
+        //     'expiration_date' => $this->plan->date_until,
+        //     'price' => $this->plan->price,
+        //     'notificationType' => $this->notificationType,
+        //     'subject' => $subject ,
+        //     'authLink' => $this->authLink,
+        // ]);
     
         return $this->from('alert@geniality.com.co', 'Endocampus ACE')
                     ->subject($subject)

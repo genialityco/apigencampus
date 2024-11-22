@@ -28,12 +28,16 @@ class CheckMembershipExpiration implements ShouldQueue
     public function handle()
     {
         $plans = $this->paymentPlanId ? 
-        collect([PaymentPlan::find($this->paymentPlanId)]) : collect([PaymentPlan::find('6735fca3be35f903cf037592')]);
+        collect([PaymentPlan::find($this->paymentPlanId)]) : PaymentPlan::skip(651)->take(300)->get();
+        $emailsSent = 0;
     
         foreach ($plans as $plan) {
+            if ($emailsSent >= 300) {
+                break; 
+            }
             if ($plan) {
                 $user = OrganizationUser::find($plan->organization_user_id);
-                if ($user) {
+                if ($user && !empty($user->properties['email'])) {
                     $expirationDate = Carbon::parse($plan->date_until);
                     $now = Carbon::now();
                     $oneWeekLater = $now->copy()->addDays(7);
@@ -44,12 +48,26 @@ class CheckMembershipExpiration implements ShouldQueue
     
                         $mailable = new MembershipExpirationNotification($user, $plan, $notificationType, $authLink);
                         Mail::to($user->properties['email'])->send($mailable);
+                        $emailsSent++; 
+                        
+                        Log::info("Correo enviado: Proximidad de expiración", [
+                            'email' => $user->properties['email'],
+                            'plan_id' => $plan->id,
+                            'tipo_notificacion' => $notificationType
+                        ]);
                     } elseif ($expirationDate->isPast()) {
                         $notificationType = 'Expiración';
                         $authLink = $this->generateAuthLink($user->properties['email'], $plan->id);
     
                         $mailable = new MembershipExpirationNotification($user, $plan, $notificationType, $authLink);
                         Mail::to($user->properties['email'])->send($mailable);
+                        $emailsSent++; 
+
+                        Log::info("Correo enviado: Expiración", [
+                            'email' => $user->properties['email'],
+                            'plan_id' => $plan->id,
+                            'tipo_notificacion' => $notificationType
+                        ]);
                     }
                 }
             }

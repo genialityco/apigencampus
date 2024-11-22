@@ -78,72 +78,78 @@ class WebHookController extends Controller
             );
     }
 
-    public function mainHandler(Request $request)
-    {
-        // Obtener el contenido JSON de la solicitud de Wompi
-        $eventData = $request->json()->all();
-		Log::debug("create transation of: ".json_encode($eventData));
-
-        // Almacena la información en el caché con una clave única y un tiempo de vida (en segundos)
-        Cache::put('transaccion_' . $eventData['data']['transaction']['id'], $eventData, 60);
-
-		// Check the transation data
+	public function mainHandler(Request $request)
+	{
+		// Obtener el contenido JSON de la solicitud de Wompi
+		$eventData = $request->json()->all();
+		Log::debug("create transaction of: " . json_encode($eventData));
+	
+		// Almacenar la información en el caché con una clave única y un tiempo de vida (en segundos)
+		Cache::put('transaccion_' . $eventData['data']['transaction']['id'], $eventData, 60);
+	
+		// Verificar los datos de la transacción
 		Log::debug("event type: " . $eventData['event']);
 		if ($eventData['event'] == 'transaction.updated') {
 			$transaction = $eventData['data']['transaction'];
-
-			Log::debug("Recv status of transation: ".$transaction['status']);
+	
+			Log::debug("Received status of transaction: " . $transaction['status']);
 			if ($transaction['status'] == 'APPROVED') {
-
 				$amount_in_cents = $transaction['amount_in_cents'];
 				$amount = floor($amount_in_cents / 100);
 				Log::debug("paid: " . $amount);
-
+	
 				$reference = $transaction['reference'];
 				Log::debug("reference: " . $reference);
-
+	
 				$parts = explode("-", $reference);
 				$organization_id = $parts[1];
 				$user_id = $parts[2];
-
-				// We need find that organization and the organization user of that user
-
+	
+				// Buscar la organización y el usuario de la organización
 				$organization = Organization::findOrFail($organization_id);
 				$organization_user = OrganizationUser::where("account_id", $user_id)->first();
-
+	
 				if (!$organization_user) {
-					Log::error("Cannot find user to id: " . $user_id . " assignment of paid plan canceled");
+					Log::error("Cannot find user with id: " . $user_id . ". Assignment of paid plan canceled.");
 				} else {
-
-					//
-					$days = 30; // Default
-
-					if (isset($organization['access_settings'])) {
-						if (isset($organization['access_settings']['days'])) {
-							$days = $organization['access_settings']['days'];
-						}
+					$days = 30; // Valor por defecto
+	
+					if (isset($organization['access_settings']) && isset($organization['access_settings']['days'])) {
+						$days = $organization['access_settings']['days'];
 					}
-
+	
 					$today = Carbon::now();
-					$payment_plan = new \App\PaymentPlan([
-						"days" => $days,
-						"date_until" => $today->addDays($days)->toIso8601String(),
-						"price" => $amount,
-					]);
-			
-					$organization_user->payment_plan()->save($payment_plan);
-					Log::debug("new payment plan for user id: " . $user_id . " : " . json_encode($payment_plan));
-
-
+					$existing_plan = $organization_user->payment_plan; // Asume que hay una relación one-to-one
+	
+					if ($existing_plan) {
+						// Actualizar el `date_until` si ya existe un plan
+						$new_date_until = Carbon::parse($existing_plan->date_until)->addDays($days);
+						$existing_plan->update([
+							'date_until' => $new_date_until->toIso8601String(),
+							'price' => $amount
+						]);
+	
+						Log::debug("Updated payment plan for user id: " . $user_id . " : " . json_encode($existing_plan));
+					} else {
+						// Crear un nuevo plan si no existe
+						$payment_plan = new \App\PaymentPlan([
+							"days" => $days,
+							"date_until" => $today->addDays($days)->toIso8601String(),
+							"price" => $amount,
+						]);
+	
+						$organization_user->payment_plan()->save($payment_plan);
+						Log::debug("New payment plan for user id: " . $user_id . " : " . json_encode($payment_plan));
+					}
+	
 					$organization_user->save();
-
 				}
 			}
-
 		}
-
-        return response()->json(['message' => 'Evento almacenado con éxito'], 200);
-    }
+	
+		return response()->json(['message' => 'Evento almacenado con éxito'], 200);
+	}
+	
 
     // Método para obtener el evento almacenado
     public function getStoredEvent($transactionId)
